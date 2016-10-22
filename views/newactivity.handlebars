@@ -1,117 +1,37 @@
-<div class="page-content">
-   <div class="page-header">
-      <h1>
-         Activity
-         <small>
-         <i class="active ace-icon fa fa-angle-double-right"></i>
-         Add New Activity
-         </small>
-      </h1>
-   </div>
-   <!-- /.page-header -->
-   <div class="row">
-      <!-- Table -->
-      <div class="col-md-6 col-xs-12 col-sm-6">
-         <!-- PAGE CONTENT BEGINS -->
-         <form class="form-horizontal" role="form">
-            <div class="form-group">
-               <label class="col-sm-3 control-label no-padding-left hidden-480" for="form-field-1" required> Title </label>
-               <div class="col-sm-9">
-                  <input type="text" id="form-field-1" placeholder="Activity Title" class="col-xs-12 col-sm-12" required />
-               </div>
-            </div>
-            <div class="form-group">
-               <label class="col-sm-3 control-label no-padding-left hidden-480"  for="id-date-range-picker-1" placeholder="Date" required>Date </label>
-               <div class="col-sm-9">
-                  <div class="input-group">
-                     <span class="input-group-addon">
-                     <i class="fa fa-calendar bigger-110"></i>
-                     </span>
-                     <input class="form-control" type="text" name="date-range-picker" id="id-date-range-picker-1" />
-                  </div>
-               </div>
-            </div>
-            <div class="form-group">
-               <label class="col-sm-3 control-label no-padding-left hidden-480"  for="timepicker1" placeholder="Time" required>Time Picker</label>
-               <div class="col-sm-9">
-                  <div class="input-group bootstrap-timepicker">
-                     <input id="timepicker1" type="text" class="form-control" />
-                     <span class="input-group-addon">
-                     <i class="fa fa-clock-o bigger-110"></i>
-                     </span>
-                  </div>
-               </div>
-            </div>
-            <div class="form-group">
-               <label class="col-sm-3 control-label no-padding-left hidden-480" for="form-field-1" required> Venue </label>
-               <div class="col-sm-9">
-                  <input type="text" id="form-field-1" placeholder="Venue" class="col-xs-12 col-sm-12" required />
-               </div>
-            </div>
-            <div class="form-group">
-               <label class="col-sm-3 control-label no-padding-left hidden-480" for="form-field-1" required> Organiser </label>
-               <div class="col-sm-9">
-                  <input type="text" id="form-field-1" placeholder="Organiser" class="col-xs-12 col-sm-12" required />
-               </div>
-            </div>
-            <div class="form-group">
-               <label class="col-sm-3 control-label no-padding-left" for="form-field-1-1" required> Venue  </label>
-               <div class="col-sm-9">
-                  <input type="text" id="form-field-1-1" placeholder="Venue" class="form-control" />
-               </div>
-            </div>
-         </form>
+<div class="panel panel-primary">
+  <div class="panel-heading">New Activtiy</div>
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Title" required>
       </div>
-      <!-- End Table -->
-      <div class="col-md-6 col-xs-12 col-sm-6">
-         <!-- PAGE CONTENT BEGINS -->
-         <!-- Heading is heresss -->
-         <!-- <h4 class="header green clearfix">
-            <span class="block pull-right">
-                <small class="grey middle">Choose style: &nbsp;</small>
-
-                <span class="btn-toolbar inline middle no-margin">
-                    <span data-toggle="buttons" class="btn-group no-margin">
-                        <label class="btn btn-sm btn-yellow">
-                            1
-                            <input type="radio" value="1" />
-                        </label>
-
-                        <label class="btn btn-sm btn-yellow active">
-                            2
-                            <input type="radio" value="2" />
-                        </label>
-
-                        <label class="btn btn-sm btn-yellow">
-                            3
-                            <input type="radio" value="3" />
-                        </label>
-
-                        <label class="btn btn-sm btn-yellow">
-                            4
-                            <input type="radio" value="4" />
-                        </label>
-                    </span>
-                </span>
-            </span>
-            </h4> -->
-         <div class="wysiwyg-editor" id="editor1"></div>
-         <!-- <div class="hr hr-double dotted"></div> -->
-         <!-- PAGE CONTENT ENDS -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Enter text ..." class="form-control" required></textarea>
       </div>
-      <!-- /.col -->
-   </div>
-   <!-- /.row -->
-   <hr />
-   <div class="col-md-6 col-xs-12 col-sm-12">
-      <p>
-         <button class="btn btn-info btn-block">Add New</button>
-      </p>
-   </div>
-   <div class="col-md-6 col-xs-12 col-sm-12">
-      <p>
-         <button class="btn btn-danger btn-block">Cancel</button>
-      </p>
-   </div>
+      <div class="form-group">
+        <label for="dateTime">Date & Time</label>
+        <input type="text" class="form-control" id="dateTime" placeholder="Date & Time" required>
+      </div>
+      <div class="form-group">
+        <label for="venue">Venue</label>
+        <input type="text" class="form-control" id="venue" placeholder="Venue" required>
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" class="form-control" id="location" placeholder="Location" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Save Activity</button>
+    </form>
+
+  </div>
 </div>
-<!-- /.page-content -->
+
+<script src="../assets/js/bootstrap3-wysihtml5.all.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('#description').wysihtml5();
+  });
+</script>
