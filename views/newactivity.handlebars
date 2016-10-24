@@ -1,26 +1,28 @@
 <div class="panel panel-primary">
   <div class="panel-heading">New Activtiy</div>
   <div class="panel-body">
-    <form>
+    <form method="POST" action="../activity/new">
       <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="Title" required>
+        <input type="text" name="title" class="form-control" id="title" placeholder="Title" required>
       </div>
       <div class="form-group">
         <label for="description">Description</label>
-        <textarea id="description" placeholder="Enter text ..." class="form-control" required></textarea>
+        <textarea name="description" id="description" placeholder="Enter text ..." class="form-control" required></textarea>
       </div>
       <div class="form-group">
         <label for="dateTime">Date & Time</label>
-        <input type="text" class="form-control" id="dateTime" placeholder="Date & Time" required>
+        <input size="15" type="text" name="datetime" class="form-control input-append date form_datetime" id="dateTime" placeholder="Date & Time" required readonly>
+        <span class="add-on"><i class="icon-remove"></i></span>
+        <span class="add-on"><i class="icon-calendar"></i></span>
       </div>
       <div class="form-group">
         <label for="venue">Venue</label>
-        <input type="text" class="form-control" id="venue" placeholder="Venue" required>
+        <input type="text" class="form-control" name="venue" id="venue" placeholder="Venue" required>
       </div>
       <div class="form-group">
         <label for="location">Location</label>
-        <input type="text" class="form-control" id="location" placeholder="Location" required>
+        <input type="text" class="form-control" name="location" id="location" placeholder="Location" required>
       </div>
 
       <button type="submit" class="btn btn-primary">Save Activity</button>
@@ -30,8 +32,17 @@
 </div>
 
 <script src="../assets/js/bootstrap3-wysihtml5.all.min.js"></script>
+<link rel="stylesheet" href="../assets/css/bootstrap-datetimepicker.min.css" media="screen" title="no title">
+<script src="../assets/js/bootstrap-datetimepicker.min.js"></script>
 <script type="text/javascript">
   $(function() {
     $('#description').wysihtml5();
+    $("#dateTime").datetimepicker({
+        format: "dd MM yyyy - hh:ii",
+        autoclose: true,
+        todayBtn: true,
+        startDate: new Date(),
+        minuteStep: 10
+    });
   });
 </script>

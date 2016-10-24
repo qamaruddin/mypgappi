@@ -10,6 +10,9 @@ router.get('/new', function(req, res) {
 });
 
 router.post('/new', function(req, res) {
+    var db = req.app.locals.db;
+    var dbRef = db.ref('posts');
+    dbRef.push().set(req.body);
     res.render('newactivity');
 });
 
